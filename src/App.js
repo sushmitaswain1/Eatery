@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import {Navbar} from './Navbar/Navbar';
+import {Banner} from './Banner/Banner';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -16,11 +18,15 @@ h1, h2, h3 {
 function App() {
   return (
     <>
-    <h1>Zaaika</h1>
+ 
     <GlobalStyle/>
-    <div className="App">
+    <Navbar/>
+    <Banner/>
+    <div>
       Hello world
-      
+     
+
+
     </div>
     </>
   );

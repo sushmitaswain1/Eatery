@@ -6,6 +6,8 @@ import {Title} from '../Styles/Titles';
 const NavbarStyled = styled.div`
     background-color: ${mainColor};
     padding : 10px;
+    position: fixed;
+    width: 100%;
 
 `
 const Logo = styled(Title)`
