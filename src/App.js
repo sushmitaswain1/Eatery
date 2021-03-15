@@ -6,6 +6,7 @@ import {Banner} from './Banner/Banner';
 import {Menu} from './Menu/Menu';
 import {GlobalStyle} from "./Styles/GlobalStyle";
 import {FoodDialogue} from "./FoodDialogue/FoodDialogue";
+import {Order} from "./Order/Order";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <GlobalStyle/>
     <FoodDialogue openFood={openFood} setOpenFood={setOpenFood}/>
     <Navbar/>
+    <Order/>
     <Banner/>
    <Menu setOpenFood={setOpenFood}/>
    
