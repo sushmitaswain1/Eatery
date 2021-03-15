@@ -4,6 +4,7 @@ import {FoodLabel} from "../Menu/FoodGrid";
 import {mainColor} from '../Styles/Colors';
 import {Title} from '../Styles/Titles';
 
+
 const Dialog = styled.div`
 width: 500px;
 
@@ -67,17 +68,26 @@ font-size:30px;
 padding: 5px 40px;
  `
 
-export function FoodDialogue({openFood, setOpenFood}) {
+export function FoodDialogue({openFood, setOpenFood, setOrders, orders}) {
     function close(){
         setOpenFood();
 
     }
      if(!openFood) return null;
+
+     const order = {
+         name: openFood.name
+     }
+
+     function addToOrder(){
+         setOrders([...orders, order]);
+         close();
+
+     }
+
     return (
         <>
-    
-       
-         <DialogShadow onClick={close}/>
+        <DialogShadow onClick={close}/>
         <Dialog>
             <DialogBanner img={openFood.img}>
             <DialogBannerName>{openFood.name}</DialogBannerName>
@@ -86,8 +96,8 @@ export function FoodDialogue({openFood, setOpenFood}) {
                 
             </DialogContent>
             <DialogFooter>
-              <ConfirmButton>
-                 Add to order
+              <ConfirmButton onClick={addToOrder}>
+                 Add to Order
               </ConfirmButton>
             </DialogFooter>
         </Dialog>
