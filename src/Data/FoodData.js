@@ -11,80 +11,80 @@ export const foodItems = [
         name: "Samosa",
         img: "/img/samosa.jpeg",
         section: "Starters",
-        price: 1
+        price: 60
     },
     {
         name: "Paneer-Tikka",
         img: "/img/paneertikka.jpeg",
         section:"Starters",
-        price: 2
+        price: 180
     },
     {
         name: "Chole",
         img: "/img/chole.jpeg",
         section: "Main Course",
-        price: 3
+        price: 170
     }, 
     {
         name: "Sarso Da Saag",
         img: "/img/sarsodasaag.jpeg",
         section: "Main Course",
-        price: 4
+        price: 190
     }, 
     {
         name: "Paneer Jalfrazi",
         img: "/img/paneer-jalfrazi.jpeg",
         section: "Main Course",
-        price: 5
+        price: 210
     } ,
     {
         name: "Chicken Curry",
         img: "/img/chicken-curry.jpeg",
         section: "Main Course",
-        price: 6
+        price: 300
     },
     {
         name: "Puri",
         img: "/img/purii.jpeg",
         section: "Main Course",
-        price: 7
+        price: 150
         
     }, 
     {
         name: "Naan",
         img: "/img/naan.jpeg",
         section: "Main Course",
-        price: 8
+        price: 220
     }, 
     {
         name: "Veg Pulao",
         img: "/img/veg-pulao.jpeg",
         section: "Main Course",
-        price: 9
+        price: 210
     } ,
     {
         name: "Chicken Biryani",
         img: "/img/chickenbiryani.jpeg",
         section: "Main Course",
-        price: 10
+        price: 270
     }, 
     {
         name: "Gulab Jamun",
         img: "/img/gulab-jamun.jpeg",
         section: "Desserts",
-        price: 11
+        price: 110
     }, 
     {
         name: "Decadent Chocolate Pastry",
         img: "/img/pastry.jpeg",
         section: "Desserts",
-        price: 12
+        price: 150
     }, 
     {
         name: "Choco-Chip Butterscotch Ice-Cream",
         img: "/img/butterscotch.jpeg", 
         section: "Desserts",
-        price: 13
+        price: 150
     }, 
 ];
 
