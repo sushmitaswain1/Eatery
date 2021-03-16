@@ -35,13 +35,19 @@ position: fixed;
 
 
 
-export function Order({orders}){
+export function Order({orders, setOrders, setOpenFood }){
     const subtotal = orders.reduce((total, order) => {
         return total = getPrice(order);
        }, 0);
 
 const tax = subtotal * 0.07;
-const total = subtotal + tax;     
+const total = subtotal + tax;  
+
+const deleteItem = index => {
+    const newOrders = [...orders];
+    newOrders.splice(index, 1);
+    setOrders(newOrders);
+}
     
 return(
         <OrderStyled> 
@@ -50,12 +56,16 @@ return(
             ( <OrderContent> 
                 {""}
                 <OrderContainer> Your Order: </OrderContainer> {""}
-                {orders.map(order => (
+                {orders.map((order, index) => (
                     <OrderContainer>
-                        <OrderItem>
+                        <OrderItem onClick = {() => {
+                            setOpenFood( {...order, index} );
+
+                        }}
+                        >
                           <div>{order.quantity}</div>
                           <div>{order.name} </div> 
-                          <div/>
+                          <div style ={{cursor: 'pointer'}} onClick = {() => {deleteItem(index)}}>X</div>
                           <div> {formatPrice(getPrice(order))} </div>
                         </OrderItem>
                     </OrderContainer>

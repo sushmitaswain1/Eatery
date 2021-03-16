@@ -80,6 +80,9 @@ padding: 5px 40px;
 
 function FoodDialogueContainer({openFood, setOpenFood, setOrders, orders}) {
      const quantity = useQuantity(openFood && openFood.quantity);
+     const isEditing = openFood.index > -1;
+   
+
     function close(){
         setOpenFood();
 
@@ -90,6 +93,14 @@ function FoodDialogueContainer({openFood, setOpenFood, setOrders, orders}) {
         ...openFood,
         quantity: quantity.value
      };
+
+       
+    function editOrder() {
+      const newOrders = [...orders];
+      newOrders[openFood.index] = order;
+      setOrders(newOrders);
+      close();
+    }
 
      function addToOrder(){
          setOrders([...orders, order]);
@@ -108,8 +119,9 @@ function FoodDialogueContainer({openFood, setOpenFood, setOrders, orders}) {
                 <QuantityInput quantity={quantity}/>
             </DialogContent>
             <DialogFooter>
-              <ConfirmButton onClick={addToOrder}>
-                 Add to Order: {formatPrice(getPrice(order))}
+              <ConfirmButton onClick={isEditing ? editOrder : addToOrder}>
+                {isEditing ? `update order:` : `Add to Order:`}
+                {formatPrice(getPrice(order))}
               </ConfirmButton>
             </DialogFooter>
         </Dialog>
